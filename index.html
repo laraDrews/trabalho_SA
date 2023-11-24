@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Matrícula Sesi Senai</title>
+</head>
+
+<body id="corpo">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="text-align: center">
+                    <img id="logo" class="logo" alt="logo"
+                        src="logo.gif" />
+                </div>
+                <h3 class="text-center">
+                    Matriculas
+                </h3>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>
+                                Matrícula
+                            </th>
+                            <th>
+                                Nome do Aluno
+                            </th>
+                            <th>
+                                Série
+                            </th>
+                            <th>
+                                Turma
+                            </th>
+                            <th>
+                                Itnerário
+                            </th>
+                            <th>
+                                Média de Notas
+                            </th>
+                            <th>
+                                Sobre
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="carros"></tbody>
+                </table>
+                <dl>
+                    Selecione um aluno desejado para obter mais informações
+                </dl>
+
+                
+                <div class="text-center">
+                    <button class="btn btn-primary" id="btnNovoAluno">Novo Aluno</button>
+                </div>
+
+                
+                <div id="modalNovoAluno" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Cadastrar Novo Aluno</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formNovoAluno">
+                                <label for="matricula">Matrícula:</label>
+                                <input type="text" id="matricula" required>
+
+                                <label for="nome">Nome do aluno:</label>
+                                <input type="text" id="nome" required>
+
+                                <label for="serie">Série:</label>
+                                <select id="serie" required>
+                                    <option value="1°">1°</option>
+                                    <option value="2°">2°</option>
+                                    <option value="3°">3°</option>
+                                </select>
+
+                                <label for="turma">Turma:</label>
+                                <select id="turma" required>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+
+                                <label for="itnerario">Itnerário:</label>
+                                <select id="itnerario" required>
+                                    <option value="Tecnico">Técnico</option>
+                                    <option value="Steam">Steam</option>
+                                </select>
+
+                                <label for="mediaNotas">Média de Notas:</label>
+                                <select id="mediaNotas" required>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                </select>
+
+                                <button type="button" onclick="cadastrarAluno()">Cadastrar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Informações do aluno</h2>
+                        <p>Matrícula: <span id="matriculaModal"></span></p>
+                        <p>Nome do aluno: <span id="nomeModal"></span></p>
+                        <p>Série: <span id="serieModal"></span></p>
+                        <p>Turma: <span id="turmaModal"></span></p>
+                        <p>Itnerário: <span id="itnerarioModal"></span></p>
+                        <p>Média de notas: <span id="mediaNotasModal"></span></p>
+                        <button id="btnExcluirAluno">Excluir Aluno</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
